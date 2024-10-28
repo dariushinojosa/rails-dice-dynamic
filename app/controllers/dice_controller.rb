@@ -1,7 +1,7 @@
 class DiceController < ApplicationController
 
   def home_action
-    render({ :template => "game_templates/home"})
+    render({ :template => "dice_templates/home"})
   end
 
   def dice_action
@@ -15,7 +15,10 @@ class DiceController < ApplicationController
     @num_dice.times do
       die = rand(1..@num_sides)
       @rolls.push(die)
-  
+    end
+
+    render({ :template => "dice_templates/flexible"})
+
   end
   
 end
